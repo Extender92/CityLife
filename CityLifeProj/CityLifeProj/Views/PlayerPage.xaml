@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CityLifeProj.Views.PlayerPage"
+             xmlns:viewmodel="clr-namespace:CityLifeProj.ViewModels"
+             x:DataType="viewmodel:PlayerViewModel"
+             Title="{Binding PlayerName}">
+
+    <ScrollView>
+        <VerticalStackLayout>
+            
+            <Grid ColumnDefinitions="*, Auto"
+                  RowDefinitions="160, Auto">
+
+                <BoxView 
+                    Grid.ColumnSpan="3"
+                    HeightRequest="160"
+                    Color="{StaticResource Primary}"
+                    HorizontalOptions="FillAndExpand">
+                </BoxView>
+
+                <Frame 
+                   Grid.Column="1"
+                   HeightRequest="160"
+                   WidthRequest="160"
+                   CornerRadius="90"
+                   HorizontalOptions="Center"
+                   IsClippedToBounds="True"
+                   Padding="0"
+                   Margin="0,140,100,0">
+
+                    <Image Aspect="AspectFill"
+                       HeightRequest="160"
+                       WidthRequest="160"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       Source="{Binding PlayerImage}">
+
+                    </Image>
+
+                </Frame>
+            </Grid>
+
+            <VerticalStackLayout Padding="10" Spacing="10">
+                <Label Text="{Binding PlayerName, StringFormat='Name: {0}'}"></Label>
+                <Label Text="{Binding PlayerEnergyDetail, StringFormat='Energy: {0}'}"></Label>
+                <Label Text="{Binding PlayerCash, StringFormat='Cash: {0}'}"></Label>
+            </VerticalStackLayout>
+
+            <Label Text="Perks:" HorizontalOptions="Center" Padding="10"></Label>
+            
+            <Label Text="Inventory:" HorizontalOptions="Center" Padding="10"></Label>
+
+            <!--<CollectionView ItemsSource="{Binding Inventory}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                        Span="2" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout>
+                            <Label Text="{Binding ItemName}"/>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>-->
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

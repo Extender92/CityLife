@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CityLifeProj.Views.HomePage"
+             BackgroundImageSource="homepic.jpg"
+             Title="Home">
+
+    <AbsoluteLayout HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand">
+        <Button 
+            Text="To City"
+            WidthRequest="100"
+            HeightRequest="60"
+            BackgroundColor="Red"
+            Clicked="OnBackClicked"
+            AbsoluteLayout.LayoutBounds="0,1"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+        />
+
+        <VerticalStackLayout
+            AbsoluteLayout.LayoutBounds="0,0"
+            Padding="2"
+            AbsoluteLayout.LayoutFlags="PositionProportional">
+
+            <ImageButton
+                Clicked="OnClickedGoPlayerPage"
+                Source="{Binding PlayerImage}"
+                MaximumWidthRequest="50"
+                MaximumHeightRequest="50">
+            </ImageButton>
+            <Label
+                Text="{Binding PlayerEnergy, StringFormat='Energy: {0}'}"
+                FontSize="20"/>
+            <Label
+                Text="{Binding PlayerCash}"
+                FontSize="20"/>
+
+        </VerticalStackLayout>
+
+        <VerticalStackLayout
+            Padding="10"
+            Spacing="10"
+            AbsoluteLayout.LayoutBounds="0.5,0.2"
+            AbsoluteLayout.LayoutFlags="PositionProportional">
+
+            <Button
+                    Clicked="OnClickedSleep"
+                    Text="Sleep"
+                    BackgroundColor="Red"
+                    HorizontalOptions="Center" />
+            <Button
+                    Clicked="OnClickedPrepareFood"
+                    Text="Prepare Food"
+                    BackgroundColor="Red"
+                    HorizontalOptions="Center" />
+            <Button
+                    Clicked="OnClickedEat"
+                    Text="Eat"
+                    BackgroundColor="Red"
+                    HorizontalOptions="Center" />
+            <Button
+                    Clicked="OnClickedDrink"
+                    Text="Drink"
+                    BackgroundColor="Red"
+                    HorizontalOptions="Center" />
+            <Button
+                    Clicked="OnClickedUpgradeHome"
+                    Text="Upgrade Home"
+                    BackgroundColor="Red"
+                    HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+
+    </AbsoluteLayout>
+</ContentPage>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CityLifeProj.Views.CityPage"
+             xmlns:viewmodel="clr-namespace:CityLifeProj.ViewModels"
+             x:DataType="viewmodel:CityViewModel"
+             BackgroundImageSource="citypic.jpg"
+             Title="City">
+
+    <AbsoluteLayout HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand">
+
+        <VerticalStackLayout
+            AbsoluteLayout.LayoutBounds="0,0"
+            Padding="2"
+            AbsoluteLayout.LayoutFlags="PositionProportional">
+
+            <ImageButton
+                Clicked="OnClickedGoPlayerPage"
+                Source="{Binding PlayerImage}"
+                MaximumWidthRequest="50"
+                MaximumHeightRequest="50">
+            </ImageButton>
+            <Label
+                Text="{Binding PlayerEnergy, StringFormat='Energy: {0}'}"
+                FontSize="20"/>
+            <Label
+                Text="{Binding PlayerCash}"
+                FontSize="20"/>
+            
+        </VerticalStackLayout>
+
+        <VerticalStackLayout
+            AbsoluteLayout.LayoutBounds="1,0"
+            Padding="2"
+            AbsoluteLayout.LayoutFlags="PositionProportional">
+
+            <Image
+                WidthRequest="40">
+                <Image.Source>
+                    <UriImageSource 
+                        Uri="{Binding CityWeatherUrl}"
+                        CacheValidity="1:00:00" />
+                </Image.Source>
+            </Image>
+
+            <Label
+                Text="{Binding CityWeather}"
+                FontSize="20"/>
+            
+        </VerticalStackLayout>
+
+        
+
+        <VerticalStackLayout
+            Padding="10"
+            Spacing="10"
+            AbsoluteLayout.LayoutBounds="0.5,0.2"
+            AbsoluteLayout.LayoutFlags="PositionProportional">
+
+            <Label
+                    Text="CITY"
+                    FontSize="100"
+                    TextColor="DarkRed"
+                    TextDecorations="Underline"
+                    TextTransform="Uppercase"
+                    HorizontalOptions="Center" />
+            <Button
+                    Clicked="OnClickedGoHomePage"
+                    Text="Home"
+                    BackgroundColor="DarkGreen"
+                    HorizontalOptions="Center" />
+            <Button
+                    Clicked="OnClickedGoGroceryStorePage"
+                    Text="Grocery Store"
+                    BackgroundColor="DarkGreen"
+                    HorizontalOptions="Center" />
+            <Button
+                    Clicked="OnClickedGoElectronicsStorePage"
+                    Text="Electronics Store"
+                    BackgroundColor="DarkGreen"
+                    HorizontalOptions="Center" />
+            <Button
+                    Clicked="OnClickedGoHardwareStorePage"
+                    Text="Hardware Store"
+                    BackgroundColor="DarkGreen"
+                    HorizontalOptions="Center" />
+            <Button
+                    Clicked="OnClickedGoUniversityPage"
+                    Text="University"
+                    BackgroundColor="DarkGreen"
+                    HorizontalOptions="Center" />
+            <Button
+                    Clicked="OnClickedGoBurgerPrincePage"
+                    Text="Burger Prince"
+                    BackgroundColor="DarkGreen"
+                    HorizontalOptions="Center" />
+            <Button
+                    x:Name="OfficeButton"
+                    Clicked="OnClickedGoOfficePage"
+                    Text="Office Building"
+                    BackgroundColor="DarkGreen"
+                    IsVisible="False"
+                    HorizontalOptions="Center" />
+
+
+        </VerticalStackLayout>
+    </AbsoluteLayout>
+</ContentPage>
